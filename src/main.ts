@@ -10,14 +10,14 @@ let joystick = {
 const star = {
   x: 0,
   y: 0,
-  element: document.querySelector('.star')!,
+  element: document.querySelector('.star') as HTMLElement,
   scaleX: 1,
 };
 
 const ghost = {
   x: 50,
   y: 50,
-  element: document.querySelector('.ghost')!,
+  element: document.querySelector('.ghost') as HTMLElement,
   xSpeed: 0,
   ySpeed: 0,
 };
@@ -48,11 +48,12 @@ const update = (dt: number) => {
 
 const render = () => {
   sprites.forEach((sprite) => {
-    sprite.element.style.setProperty('--x', sprite.x + 'px');
-    sprite.element.style.setProperty('--y', sprite.y + 'px');
+    const style = sprite.element.style;
+    style.setProperty('--x', sprite.x + 'px');
+    style.setProperty('--y', sprite.y + 'px');
 
     if ('scaleX' in sprite) {
-      sprite.element.style.setProperty('--scaleX', sprite.scaleX);
+      style.setProperty('--scaleX', '' + sprite.scaleX);
     }
   });
 };

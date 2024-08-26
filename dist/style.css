@@ -1,0 +1,36 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background: black;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.frame {
+  background-color: rgb(22, 22, 48);
+  width: 640px;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+}
+
+.sprite {
+  display: inline-block;
+  transform: translate(var(--x), var(--y)) scaleX(var(--scaleX, 1));
+  font-size: 64px;
+}
+
+.credit {
+  color: rgb(44, 43, 43);
+}
+.credit:focus, .credit:hover {
+  color: white;
+}
